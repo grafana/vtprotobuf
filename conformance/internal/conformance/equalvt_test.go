@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/planetscale/vtprotobuf/testproto/proto3opt"
+	"github.com/grafana/vtprotobuf/testproto/proto3opt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/encoding/protojson"

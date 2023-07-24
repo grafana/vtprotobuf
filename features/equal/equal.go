@@ -9,7 +9,7 @@ import (
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/reflect/protoreflect"
 
-	"github.com/planetscale/vtprotobuf/generator"
+	"github.com/grafana/vtprotobuf/generator"
 )
 
 func init() {
@@ -18,9 +18,7 @@ func init() {
 	})
 }
 
-var (
-	protoPkg = protogen.GoImportPath("google.golang.org/protobuf/proto")
-)
+var protoPkg = protogen.GoImportPath("google.golang.org/protobuf/proto")
 
 type equal struct {
 	*generator.GeneratedFile
@@ -39,8 +37,10 @@ func (p *equal) GenerateFile(file *protogen.File) bool {
 	return p.once
 }
 
-const equalName = "EqualVT"
-const equalMessageName = "EqualMessageVT"
+const (
+	equalName        = "EqualVT"
+	equalMessageName = "EqualMessageVT"
+)
 
 func (p *equal) message(proto3 bool, message *protogen.Message) {
 	for _, nested := range message.Messages {

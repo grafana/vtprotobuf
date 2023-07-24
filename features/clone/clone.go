@@ -9,7 +9,7 @@ import (
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/reflect/protoreflect"
 
-	"github.com/planetscale/vtprotobuf/generator"
+	"github.com/grafana/vtprotobuf/generator"
 )
 
 const (
@@ -17,9 +17,7 @@ const (
 	cloneMessageName = "CloneMessageVT"
 )
 
-var (
-	protoPkg = protogen.GoImportPath("google.golang.org/protobuf/proto")
-)
+var protoPkg = protogen.GoImportPath("google.golang.org/protobuf/proto")
 
 func init() {
 	generator.RegisterFeature("clone", func(gen *generator.GeneratedFile) generator.FeatureGenerator {
