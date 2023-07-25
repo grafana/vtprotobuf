@@ -5,14 +5,16 @@
 package grpc
 
 import (
-	"github.com/planetscale/vtprotobuf/generator"
+	"github.com/grafana/vtprotobuf/generator"
 	"google.golang.org/protobuf/compiler/protogen"
 )
 
 const version = "1.1.0-vtproto"
 
-var requireUnimplementedAlways = true
-var requireUnimplemented = &requireUnimplementedAlways
+var (
+	requireUnimplementedAlways = true
+	requireUnimplemented       = &requireUnimplementedAlways
+)
 
 func init() {
 	generator.RegisterFeature("grpc", func(gen *generator.GeneratedFile) generator.FeatureGenerator {

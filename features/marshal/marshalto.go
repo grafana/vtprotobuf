@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/planetscale/vtprotobuf/generator"
+	"github.com/grafana/vtprotobuf/generator"
 
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/encoding/protowire"
@@ -671,7 +671,7 @@ func (p *marshal) message(message *protogen.Message) {
 	p.P(`}`)
 	p.P()
 
-	//Generate MarshalToVT methods for oneof fields
+	// Generate MarshalToVT methods for oneof fields
 	for _, field := range message.Fields {
 		if field.Oneof == nil || field.Oneof.Desc.IsSynthetic() {
 			continue
